@@ -1,5 +1,7 @@
 #!/bin/sh
-alias php='docker exec -t bananamoon-php-tools php $@'
-alias magerun='docker exec -ti bananamoon-php-tools magerun $@'
-alias composer='docker exec -ti bananamoon-php-tools composer -d=../ $@'
-alias mysql='docker exec -ti bananamoon-mysql mysql $@'
+PHPTOOLS_CONTAINER_NAME=`docker ps --format "{{.Names}}" | grep php-tools`
+MYSQL_CONTAINER_NAME=`docker ps --format "{{.Names}}" | grep mysql`
+alias php="docker exec -t $PHPTOOLS_CONTAINER_NAME php $@"
+alias magerun="docker exec -ti $PHPTOOLS_CONTAINER_NAME magerun $@"
+alias composer="docker exec -ti $PHPTOOLS_CONTAINER_NAME composer -d=../ $@"
+alias mysql="docker exec -ti $MYSQL_CONTAINER_NAME mysql $@"
