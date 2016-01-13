@@ -32,8 +32,6 @@ mysql:
     MYSQL_DATABASE: magento
     MYSQL_USER: magento
     MYSQL_PASSWORD: magentoDbPwd123
-  volumes:
-    - ./db:/var/lib/mysql
 mailcatcher:
   image: jderusse/mailcatcher
   ports:
