@@ -1,5 +1,5 @@
 php:
-  image: magento:php5.5-apache
+  build: magento-php-5.5-apache
   links:
     - "mysql:mysql"
     - "mailcatcher:my_smtp"
@@ -11,7 +11,7 @@ php:
   environment:
     DOMAIN_NAME: "magento.local"
 php-tools:
-  image: magento:php5.5-tools
+  build: magento-php-5.5-tools
   links:
     - "mysql:mysql"
     - "mailcatcher:my_smtp"
