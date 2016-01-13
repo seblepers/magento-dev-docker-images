@@ -1,0 +1,5 @@
+#!/bin/sh
+alias php='docker exec -t bananamoon-php-tools php $@'
+alias magerun='docker exec -ti bananamoon-php-tools magerun $@'
+alias composer='docker exec -ti bananamoon-php-tools composer -d=../ $@'
+alias mysql='docker exec -ti bananamoon-mysql mysql $@'
